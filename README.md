@@ -1,7 +1,8 @@
 About [<img src="https://secure.travis-ci.org/1602/compound.png" />](http://travis-ci.org/#!/1602/compound)
 =====
 
-<img src="https://raw.github.com/1602/compound/master/templates/compound.png" />
+<img
+src="https://raw.github.com/1602/compound/master/templates/public/images/compound.png" />
 
 CompoundJS - MVC framework for NodeJS&trade;. It allows you to build web application in minutes.
 
@@ -29,8 +30,26 @@ Usage
     # run server on port 3000
     $ compound s 3000
 
-    # visit appp
+    # visit app
     $ open http://localhost:3000/posts
+
+Using client-side framework
+===========================
+
+Experimental feature. Allows to work transparently on client and server (same codebase working on clientside).
+Install additional prerequisites:
+
+    $ npm install railway-routes browserify
+
+Uncomment following configuration line in `config/environment.js`:
+
+    app.enable('clientside');
+
+Run app
+
+    node .
+
+Make sure you've included `public/javascripts/compound.js` in your layout.
 
 Short functionality review
 ==========================
@@ -81,7 +100,7 @@ CLI tool
 Directory structure
 -------------------
 
-On initialization rails-like directories tree generated, like that:
+On initialization directories tree generated, like that:
 
     .
     |-- app
@@ -286,7 +305,7 @@ The controller is a module containing the declaration of actions such as this:
 
 ## Generators ##
 
-Railway offers several built-in generators: for a model, controller and for 
+Compound offers several built-in generators: for a model, controller and for
 initialization. Can be invoked as follows:
 
     compound generate [what] [params]
@@ -322,14 +341,14 @@ CompoundJS Event model
 Compound application loading process supports following events to be attached
 (in chronological order):
 
-- before configure
-- after configure
-- before extensions
-- after extensions
-- post-init
-- structure loaded
-- models loaded
-- after initializers
+1. configure
+2. after configure
+3. routes
+4. extensions
+5. after extensions
+6. structure
+7. models
+8. initializers
 
 REPL console
 ------------
@@ -342,7 +361,7 @@ or it's shortcut
 
     compound c
 
-It just simple node-js console with some Railway bindings, e.g. models. Just one note
+It just simple node-js console with some Compound bindings, e.g. models. Just one note
 about working with console. Node.js is asynchronous by its nature, and it's great
 but it made console debugging much more complicated, because you should use callback
 to fetch result from database, for example. I have added one useful method to
@@ -381,7 +400,7 @@ NOTE: translation can contain `%` symbol(s), that means variable substitution
 
 If you don't need locales support you can turn it off in `config/environment`:
 
-    app.set('locales', 'off');
+    app.set('i18n', 'off');
 
 Logger
 -----
@@ -392,7 +411,7 @@ Logger
 Configuring
 ===========
 
-Railway has some configuration options allows to customize app behavior
+Compound has some configuration options allows to customize app behavior
 
 eval cache
 ----------

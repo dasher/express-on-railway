@@ -6,10 +6,10 @@ if (!process.env.TRAVIS) {
     });
 }
 
-global.app = require('../lib/compound').createServer()
-global.railway = app.railway;
+global.app = require('../lib/server/compound').createServer()
+global.compound = app.compound;
 global.args = [];
-railway.generators.init(railway, global.args);
+compound.generators.init(compound, global.args);
 
 process.env.NODE_ENV = 'test';
 try {

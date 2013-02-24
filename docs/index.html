@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="style-light">
   <head>
     <title>CompoundJS</title>
 
     <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/javascripts/prettyprint/prettify.css" rel="stylesheet">
@@ -20,75 +21,66 @@
       section, body {
         padding-top: 60px;
       }
+      h1, h2, h3 {
+        font: 300 24px 'Quicksand', 'Lucida Grande', sans-serif;
+        margin-bottom: 20px;
+        display: block;
+        padding: 10px 20px 10px 20px;
+      }
+      h1 {
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      pre {
+          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(0,0,0,0.7);
+          color: #ddd
+      }
     </style>
 
   </head>
   <body>
-    <!--div class="navbar-wrapper navbar-fixed-top" style="z-index: 5;">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="/">CompoundJS</a>
-            <div class="nav-collapse">
-              <ul class="nav">
-                <li><a href="#routing">Routing</a></li><li><a href="#controller">Controller</a></li><li><a href="#views">Views</a></li><li><a href="#orm">ORM</a></li><li><a href="#generators">Generators</a></li><li><a href="#console">Console</a></li><li><a href="#coffee">Coffee</a></li><li><a href="#localization">Locales</a></li><li><a href="#extensions">Extensions</a></li>
-                <li class="dropdown"><a href="#" class="dropdonw-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#heroku">Heroku</a></li>
-                  <li><a href="#snippets">Snippets</a></li>
-                </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div-->
 
-<div class="container">
 
     <div class="row">
-      <div class="span8" style="height: 300px; zoom: 75%; background: url(https://f.cloud.github.com/assets/119684/21484/a0314c0a-49b4-11e2-9c07-cd4a8adcc513.png)">
-        <div style="margin-top: 230px; margin-left: 400px; color: #ccc; font-size: 17px;">
-          build apps with love
+      <div class="container">
+        <div class="span8" style="height: 300px; zoom: 75%; background: url(https://f.cloud.github.com/assets/119684/21484/a0314c0a-49b4-11e2-9c07-cd4a8adcc513.png)">
+          <div style="margin-top: 250px; margin-left: 400px; color: #ccc; font-size: 17px;">
+            build apps with love
+          </div>
+        </div>
+        <div class="span4">
+          <a class="btn btn-primary" href="docs">Guide</a>
+          <a class="btn" href="https://github.com/1602/compound">Source</a>
+          <a class="btn" href="https://github.com/1602/compound/issues">Issues</a>
+          <a class="btn" href="https://groups.google.com/forum/?fromgroups#!forum/compoundjs">Discuss</a>
+          <div style="text-align: center; padding: 20px;">
+              <a href="https://github.com/1602/compound/blob/master/docs/migration-guide.md">RailwayJS Migration Guide</a>
+          </div>
+
+               <!--h1 style="color: #fc0243" margin-top:30px> start now
+              </h1>
+              <pre><code>npm install compound -g
+compound init compound-app; cd compound-app; npm install
+compound generate crud thing name description
+node .
+
+curl http://localhost:3000/things.json
+curl -X POST -F 'Thing[name]=compound' http://localhost:3000/things.json
+              </code></pre-->
         </div>
       </div>
-      <div class="span4">
-        <a class="btn" href="docs.html">Guide</a>
-        <a class="btn" href="https://github.com/1602/compound">Source</a>
-        <a class="btn" href="https://github.com/1602/compound/issues">Issues</a>
-        <a class="btn" href="https://groups.google.com/forum/?fromgroups#!forum/compoundjs">Discuss</a>
+      <div class="row" style="padding-top: 50px;">
+          <div class="container">
+              <div class="span10" style="text-align: center">
+                  <h1>Breaking news: <span style="color:red">client-side compound</span></h1>
+                  <p>
+                  After years of server-side<br/> finally<br/>compound ready to work in browser<br/> same codebase<br/> same structure<br/> everything works on client-side
+                  </p>
+                  <a class="btn btn-large btn-warning" style="margin-top: 20px" href="http://demo.compoundjs.com/books">Try demo</a>
+              </div>
+          </div>
       </div>
-    </div>
-
-
-</div>
-
-<!--footer class="footer">
-<div class="container">
-  <p class="pull-right"><a href="#">Back to top</a></p>
-  <p>
-    Documentation written by <a href="http://twitter.com/1602">@1602 (Anatoliy Chakkaev)</a>.<br/>
-    Built on <a href="http://twitter.github.com/bootstrap">Bootstrap</a> from Twitter<br/>
-    CompoundJS code licensed under the <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
-  </p>
-  <h6 style="text-align: center" id="tip">
-    CompoundJS and JugglingDB projects are free, but you can leave a tip here:
-  </h6>
-  <form style="text-align: center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="J3JJDYJW78LEJ">
-    <input type="image" style="box-shadow: none; -webkit-box-shadow: none; padding: 0; border: 0; width: 147px; height: 47px;" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-    <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
-  </form>
-</div>
-</footer-->
-
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
